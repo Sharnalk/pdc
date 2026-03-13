@@ -1,9 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-#root{
-    background-color: #000000;
+:root {
+  --pdc-bg: #09090b;
+  --pdc-surface: #18181b;
+  --pdc-border: rgba(255, 255, 255, 0.08);
+  --pdc-text: #fafafa;
+  --pdc-muted: #71717a;
+  --pdc-accent: #a78bfa;
+  --pdc-accent-glow: rgba(167, 139, 250, 0.15);
+  --pdc-success: #34d399;
+  --pdc-danger: #f87171;
 }
-#main_pill{
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--pdc-bg);
+  color: var(--pdc-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  background-color: var(--pdc-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--pdc-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pdc-muted);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pdc-accent);
+}
+
+/* Selection */
+::selection {
+  background: var(--pdc-accent);
+  color: var(--pdc-bg);
+}
+
+#main_pill {
 }
