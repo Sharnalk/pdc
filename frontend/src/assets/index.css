@@ -4,6 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  --color-pdc-bg: #09090b;
+  --color-pdc-surface: #18181b;
+  --color-pdc-border: rgba(255, 255, 255, 0.08);
+  --color-pdc-text: #fafafa;
+  --color-pdc-muted: #71717a;
+  --color-pdc-accent: #a78bfa;
+  --color-pdc-accent-glow: rgba(167, 139, 250, 0.15);
+  --color-pdc-success: #34d399;
+  --color-pdc-danger: #f87171;
+
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
 :root {
   --pdc-bg: #09090b;
   --pdc-surface: #18181b;

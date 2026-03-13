@@ -18,6 +18,7 @@ const buttonVariants = cva(
           "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
         ghost: "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         default_blue: "z-10 shadow-lg bg-blue-500 text-slate-50 hover:bg-blue-500/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+        accent: "bg-pdc-accent text-pdc-bg hover:bg-pdc-accent/90 transition-all duration-300 font-display font-semibold shadow-[0_0_20px_rgba(167,139,250,0.15)] hover:shadow-[0_0_25px_rgba(167,139,250,0.3)]",
       },
       size: {
         default: "h-10 px-4 py-2",
