@@ -13,7 +13,7 @@ import React from "react";
 import useStore from "@/store/store.js";
 import RepartitionChartDetail from "@/components/RepartitionChart/RepartitionChartDetail.jsx";
 import CorrelationChartDetail from "@/components/CorrelationChart/CorrelationChartDetail.jsx";
-import {FirstLetterUpperCase} from "@/tool/tool.js";
+import {FirstLetterUpperCase, ReplaceUnderscoreSpace} from "@/lib/utils.js";
 export function GraphDrawer({icon, typeOfChart, triggerTitle}) {
     const { drugType, drugData, chartType, setChartType, getFunctionToCall} = useStore();
     function getComponentToRender(){
