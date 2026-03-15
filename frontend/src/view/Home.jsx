@@ -13,9 +13,15 @@ function Home() {
     const { screenSize } = useStore();
 
     useEffect(() => {
-        const scene = document.getElementById("main_pill");
-        if (scene) {
-            const parallax = new Parallax(scene);
+        const inputArea = document.getElementById("main");
+        const scene = document.getElementById("parallax-scene");
+        if (inputArea && scene) {
+            const parallax = new Parallax(scene, {
+                relativeInput: true,
+                hoverOnly: true,
+                inputElement: inputArea,
+                selector: '[data-depth]'
+            });
             return () => parallax.destroy();
         }
     }, []);
@@ -44,7 +50,7 @@ function Home() {
     };
 
     return (
-        <main className="w-full flex-grow flex flex-col justify-center overflow-hidden">
+        <main id="main" className="w-full flex-grow flex flex-col justify-center overflow-hidden">
             <section className="relative w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -102,28 +108,33 @@ function Home() {
                                 : "absolute bottom-[-10%] right-[-10%] opacity-20 pointer-events-none grayscale"
                         }`}
                     >
-                        <div id="main_pill" className="w-full h-full relative">
+                        <div id="parallax-scene" className="w-full h-full relative pointer-events-none">
                             {/* Glow effects behind items */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-pdc-accent/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
                             
-                            <img 
-                                data-depth="0.72" 
-                                src={pill}
-                                className="absolute top-[20%] right-[10%] h-[180px] md:h-[220px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
-                                alt="pill"
-                            />
-                            <img 
-                                data-depth="0.52" 
-                                src={mushroom}
-                                className="absolute top-[35%] left-[5%] h-[160px] md:h-[200px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-10"
-                                alt="mushroom"
-                            />
-                            <img 
-                                data-depth="0.92" 
-                                src={cigarette}
-                                className="absolute bottom-[10%] left-[30%] h-[220px] md:h-[280px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30"
-                                alt="cigarette"
-                            />
+                            <div data-depth="0.4" className="absolute inset-0 pointer-events-none">
+                                <img 
+                                    src={pill}
+                                    className="absolute top-[15%] right-[10%] h-[180px] md:h-[220px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                                    alt="pill"
+                                />
+                            </div>
+
+                            <div data-depth="0.2" className="absolute inset-0 pointer-events-none">
+                                <img 
+                                    src={mushroom}
+                                    className="absolute top-[30%] left-[5%] h-[160px] md:h-[200px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-10"
+                                    alt="mushroom"
+                                />
+                            </div>
+
+                            <div data-depth="0.6" className="absolute inset-0 pointer-events-none">
+                                <img 
+                                    src={cigarette}
+                                    className="absolute bottom-[10%] left-[25%] h-[220px] md:h-[280px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30"
+                                    alt="cigarette"
+                                />
+                            </div>
                         </div>
                     </motion.div>
                 </div>
