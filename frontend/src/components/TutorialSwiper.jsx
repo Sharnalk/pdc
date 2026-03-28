@@ -64,26 +64,27 @@ const TutorialSwiper = ({ titleButton }) => {
                     </div>
                 </div>
 
-                <div className="mt-8 flex justify-between items-center pt-6 border-t border-pdc-border">
-                    <div className="flex gap-3">
+                <div className="mt-6 md:mt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-4 pt-4 md:pt-6 border-t border-pdc-border">
+                    <div className="flex w-full md:w-auto justify-between md:justify-start gap-3">
                         <Button
                             onClick={goToPrev}
                             disabled={currentIndex === 0}
-                            className="btn-pdc"
+                            className="btn-pdc flex-1 md:flex-none"
                         >
-                            <ChevronLeft className="mr-2 h-4 w-4" /> Previous
+                            <ChevronLeft className="mr-1 md:mr-2 h-4 w-4" /> <span className="hidden sm:inline">Previous</span>
                         </Button>
-                        <Button
-                            onClick={goToNext}
-                            disabled={currentIndex === slides.length - 1}
-                            className="btn-pdc"
-                        >
-                            Next <ChevronRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        {currentIndex !== slides.length - 1 && (
+                            <Button
+                                onClick={goToNext}
+                                className="btn-pdc flex-1 md:flex-none"
+                            >
+                                <span className="hidden sm:inline">Next</span> <ChevronRight className="ml-1 md:ml-2 h-4 w-4" />
+                            </Button>
+                        )}
                     </div>
 
                     {currentIndex === slides.length - 1 && (
-                        <Button variant="accent" onClick={() => setIsOpen(false)} className="rounded-full px-8">
+                        <Button variant="accent" onClick={() => setIsOpen(false)} className="rounded-full w-full md:w-auto px-4 md:px-8">
                             Finish Exploration
                         </Button>
                     )}

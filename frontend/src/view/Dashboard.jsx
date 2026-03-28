@@ -12,6 +12,7 @@ import { FirstLetterUpperCase, ReplaceUnderscoreSpace } from "@/lib/utils";
 import React, { useEffect } from "react";
 import BubbleGlow from "@/components/BubbleGlow.jsx";
 import { motion } from "framer-motion";
+import { useShallow } from 'zustand/react/shallow';
 
 const Dashboard = () => {
     const t = useStore(state => state.translations);
@@ -23,7 +24,15 @@ const Dashboard = () => {
         chartType, 
         setApiData,
         screenSize 
-    } = useStore();
+    } = useStore(useShallow(state => ({
+        setDrugType: state.setDrugType,
+        drugTypePrettier: state.drugTypePrettier,
+        consumptionType: state.consumptionType,
+        precisionConsumption: state.precisionConsumption,
+        chartType: state.chartType,
+        setApiData: state.setApiData,
+        screenSize: state.screenSize
+    })));
 
     useEffect(() => {
         setApiData({

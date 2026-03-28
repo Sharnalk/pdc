@@ -13,12 +13,19 @@ const NavBar = () => {
     const location = useLocation();
 
     useEffect(() => {
+        let timeoutId;
         const updateScreenSize = () => {
-            setScreenSize(Math.round(window.innerWidth * window.devicePixelRatio));
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                setScreenSize(Math.round(window.innerWidth * window.devicePixelRatio));
+            }, 100);
         };
         updateScreenSize();
         window.addEventListener("resize", updateScreenSize);
-        return () => window.removeEventListener("resize", updateScreenSize);
+        return () => {
+            clearTimeout(timeoutId);
+            window.removeEventListener("resize", updateScreenSize);
+        };
     }, []);
 
     useEffect(() => {

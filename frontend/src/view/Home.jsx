@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 function Home() {
     const t = useStore(state => state.translations);
-    const { screenSize } = useStore();
+    const screenSize = useStore(state => state.screenSize);
 
     useEffect(() => {
         const inputArea = document.getElementById("main");
@@ -110,9 +110,9 @@ function Home() {
                     >
                         <div id="parallax-scene" className="w-full h-full relative pointer-events-none">
                             {/* Glow effects behind items */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-pdc-accent/10 blur-[120px] rounded-full pointer-events-none animate-pulse" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle,_rgba(167,139,250,0.15)_0%,_transparent_70%)] rounded-full pointer-events-none animate-pulse" />
                             
-                            <div data-depth="0.4" className="absolute inset-0 pointer-events-none">
+                            <div data-depth="0.4" className="absolute inset-0 pointer-events-none will-change-transform">
                                 <img 
                                     src={pill}
                                     className="absolute top-[15%] right-[10%] h-[180px] md:h-[220px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
@@ -120,7 +120,7 @@ function Home() {
                                 />
                             </div>
 
-                            <div data-depth="0.2" className="absolute inset-0 pointer-events-none">
+                            <div data-depth="0.2" className="absolute inset-0 pointer-events-none will-change-transform">
                                 <img 
                                     src={mushroom}
                                     className="absolute top-[30%] left-[5%] h-[160px] md:h-[200px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-10"
@@ -128,7 +128,7 @@ function Home() {
                                 />
                             </div>
 
-                            <div data-depth="0.6" className="absolute inset-0 pointer-events-none">
+                            <div data-depth="0.6" className="absolute inset-0 pointer-events-none will-change-transform">
                                 <img 
                                     src={cigarette}
                                     className="absolute bottom-[10%] left-[25%] h-[220px] md:h-[280px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30"

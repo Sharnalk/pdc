@@ -15,8 +15,10 @@ import { Label } from "@/components/ui/label.jsx";
 import {FirstLetterUpperCase, ReplaceUnderscoreSpace, cn} from "@/lib/utils";
 import codeCorrelation from "@/assets/img/codeCorrelation.png"
 import codePython from "@/assets/img/codePython.png"
+import { useShallow } from 'zustand/react/shallow';
+
 export const SlideIntroduction = () => {
-    const {translations} = useStore();
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideIntroduction;
     return (
         <div className="flex flex-col gap-y-6 text-pdc-text text-sm md:text-base leading-relaxed">
@@ -78,8 +80,14 @@ export const SlideIntroduction = () => {
     );
 };
 export const SlideHowToReadChart = () => {
-    const {apiRepartitionData, getFunctionToCall, setChartType, setConsumptionType, consumptionType} = useStore();
-    const {translations} = useStore();
+    const {apiRepartitionData, getFunctionToCall, setChartType, setConsumptionType, consumptionType} = useStore(useShallow(state => ({
+        apiRepartitionData: state.apiRepartitionData,
+        getFunctionToCall: state.getFunctionToCall,
+        setChartType: state.setChartType,
+        setConsumptionType: state.setConsumptionType,
+        consumptionType: state.consumptionType
+    })));
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideReadChart;
     useEffect(() => {
         setChartType('repartition');
@@ -116,8 +124,15 @@ export const SlideHowToReadChart = () => {
     );
 };
 export const ExplanationConsumption = () => {
-    const {apiData, setApiData,setDrugType,precisionConsumption,setPrecisionConsumption, setConsumptionType} = useStore();
-    const {translations} = useStore();
+    const {apiData, setApiData,setDrugType,precisionConsumption,setPrecisionConsumption, setConsumptionType} = useStore(useShallow(state => ({
+        apiData: state.apiData,
+        setApiData: state.setApiData,
+        setDrugType: state.setDrugType,
+        precisionConsumption: state.precisionConsumption,
+        setPrecisionConsumption: state.setPrecisionConsumption,
+        setConsumptionType: state.setConsumptionType
+    })));
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideExplanationConsumption;
     useEffect(() => {
         setDrugType('meth')
@@ -148,8 +163,12 @@ export const ExplanationConsumption = () => {
     );
 }
 export const SlideSummary = () => {
-    const {getFunctionToCall, setChartType,setConsumptionType} = useStore();
-    const {translations} = useStore();
+    const {getFunctionToCall, setChartType,setConsumptionType} = useStore(useShallow(state => ({
+        getFunctionToCall: state.getFunctionToCall,
+        setChartType: state.setChartType,
+        setConsumptionType: state.setConsumptionType
+    })));
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideExplanationCorrelation;
     useEffect(() => {
         setChartType('correlation')
@@ -177,7 +196,7 @@ export const SlideSummary = () => {
 export const SlideCorrelationIntroduction = () => {
     const [answer, setAnswer] = useState('')
     const [selectedValue, setSelectedValue] = useState('');
-    const {translations} = useStore();
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideAnalysisGoal;
     return (
         <div className="flex flex-col gap-y-6 text-pdc-text text-sm md:text-base leading-relaxed">
@@ -263,7 +282,7 @@ export const SlideCorrelationIntroduction = () => {
 };
 export const SlideCorrelationExplanation = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {translations} = useStore();
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideExplanationAnalysis;
     return (
         <div className="flex flex-col gap-y-6 text-pdc-text text-sm md:text-base leading-relaxed">
@@ -303,7 +322,7 @@ export const SlideCorrelationExplanation = () => {
     );
 };
 export const SlideEnding = () => {
-    const {translations} = useStore();
+    const translations = useStore(state => state.translations);
     const t = translations.analysis.slideConclusion;
     return (
         <div className="flex flex-col gap-y-6 text-pdc-text text-sm md:text-base leading-relaxed">
