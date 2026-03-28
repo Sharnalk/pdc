@@ -289,7 +289,7 @@ export const SlideCorrelationExplanation = () => {
             <ShowCodeAlert imageSource={codePython} textButtonTrigger={'Show me the code!'}/>
 
             <p>{t.meanCorrelationHighlight}</p>
-            <Button onClick={() => setIsOpen(!isOpen)} variant="outline" className = "w-fit text-pdc-text border-pdc-border hover:bg-white/5">?</Button>
+            <Button onClick={() => setIsOpen(!isOpen)} className = "btn-pdc w-10 h-10 p-0 text-base">?</Button>
             {
                 isOpen == false ? '' :
                     <div className="bg-pdc-surface/60 border border-pdc-border backdrop-blur-md mx-4 p-6 w-fit rounded-2xl text-pdc-text shadow-2xl">

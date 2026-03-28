@@ -97,12 +97,15 @@ const Dashboard = () => {
                     {/* Search & Main Action Area */}
                     <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-start">
                         <motion.div variants={itemVariants} className="flex flex-col gap-6">
-                            <div className="flex flex-wrap items-center gap-4 bg-pdc-surface/40 p-4 rounded-2xl border border-pdc-border backdrop-blur-xl">
-                                <SearchBar className="flex-grow" handleDrugType={handleDrugType} />
-                                <SearchButton className="rounded-xl h-12" />
-                            </div>
+                            <div className="relative z-10 gap-4 bg-pdc-surface/40 p-4 rounded-2xl border border-pdc-border backdrop-blur-xl">
+                                <p className={`text-gray-400 pb-1`}>{t.dashboard.drugExplanationSearch}</p>   
+                                <div className="flex flex-wrap items-center gap-x-4">
+                                    <SearchBar className="flex-grow" handleDrugType={handleDrugType} />
+                                    <SearchButton className="rounded-xl " />
+                                </div> 
+                            </div>  
 
-                            <Card className="bg-pdc-surface/20 border-pdc-border backdrop-blur-sm overflow-hidden shadow-2xl rounded-3xl">
+                            <Card className="bg-pdc-surface/20 border-pdc-border backdrop-blur-sm overflow-hidden shadow-2xl rounded-3xl z-0">
                                 <CardContent className="p-0">
                                     <div className="bg-pdc-surface/40 p-2 border-b border-pdc-border flex items-center justify-between px-6 h-12">
                                         <div className="flex gap-1.5">

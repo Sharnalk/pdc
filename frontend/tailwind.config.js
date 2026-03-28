@@ -23,6 +23,7 @@ module.exports = {
           surface: '#18181b',
           border: 'rgba(255,255,255,0.08)',
           text: '#fafafa',
+          overlay: 'rgba(0,0,0,0.5)',
           muted: '#71717a',
           accent: '#a78bfa',
           'accent-glow': 'rgba(167,139,250,0.15)',

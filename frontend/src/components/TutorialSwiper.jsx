@@ -70,7 +70,7 @@ const TutorialSwiper = ({ titleButton }) => {
                             variant="outline"
                             onClick={goToPrev}
                             disabled={currentIndex === 0}
-                            className="rounded-full border-pdc-border text-pdc-text hover:bg-white/5 disabled:opacity-30"
+                            className="btn-pdc"
                         >
                             <ChevronLeft className="mr-2 h-4 w-4" /> Previous
                         </Button>
@@ -78,7 +78,7 @@ const TutorialSwiper = ({ titleButton }) => {
                             variant="outline"
                             onClick={goToNext}
                             disabled={currentIndex === slides.length - 1}
-                            className="rounded-full border-pdc-border text-pdc-text hover:bg-white/5 disabled:opacity-30"
+                            className="btn-pdc"
                         >
                             Next <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>

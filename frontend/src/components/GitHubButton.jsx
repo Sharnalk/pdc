@@ -10,7 +10,7 @@ export function GitHubButton() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/Rayanworkout/Predicting-Drug-Consumption"
-            className="group flex items-center gap-2 rounded-full border border-pdc-border bg-pdc-surface/50 px-4 py-1.5 font-mono text-xs text-pdc-text transition-all duration-300 hover:border-pdc-accent/30 hover:shadow-[0_0_15px_rgba(167,139,250,0.1)]"
+            className="btn-pdc group gap-2 px-4 py-1.5 font-mono text-xs hover:shadow-[0_0_15px_rgba(167,139,250,0.1)]"
         >
             <Star
                 size={14}

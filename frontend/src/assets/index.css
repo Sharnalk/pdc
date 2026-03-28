@@ -24,6 +24,7 @@
   --pdc-surface: #18181b;
   --pdc-border: rgba(255, 255, 255, 0.08);
   --pdc-text: #fafafa;
+  --pdc-text-overlay: rgba(26, 22, 22, 0.5);
   --pdc-muted: #71717a;
   --pdc-accent: #a78bfa;
   --pdc-accent-glow: rgba(167, 139, 250, 0.15);
@@ -70,5 +71,17 @@ body {
   color: var(--pdc-bg);
 }
 
-#main_pill {
+@layer components {
+  .btn-pdc {
+    @apply inline-flex items-center justify-center rounded-full border border-pdc-border 
+           bg-transparent transition-all duration-300 text-pdc-text/50;
+  }
+
+  .btn-pdc:hover:not(:disabled) {
+    @apply border-pdc-accent/30 bg-white/5 text-pdc-text;
+  }
+
+  .btn-pdc:disabled {
+    @apply cursor-not-allowed opacity-30;
+  }
 }

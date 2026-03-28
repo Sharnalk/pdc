@@ -10,7 +10,7 @@ export function LangSwitch() {
     return (
         <button
             onClick={toggleLang}
-            className="flex items-center gap-2 rounded-full border border-pdc-border px-4 py-1.5 font-mono text-xs transition-all duration-300 hover:border-pdc-accent/30"
+            className="btn-pdc gap-2 px-4 py-1.5 font-mono text-xs"
         >
             <span
                 className={`transition-opacity duration-300 ${
