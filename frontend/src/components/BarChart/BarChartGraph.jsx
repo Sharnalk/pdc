@@ -42,6 +42,14 @@ export function BarChartGraph({ apiData, orientation, dashboard = false }) {
                 colors: ['#262626']
             },
         },
+        tooltip:{
+            theme:'light',
+            style: {
+                fontSize: '12px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                colors: ['#263238']
+            },
+        },
         xaxis: {
             categories: Object.keys(apiData),
         },

@@ -40,10 +40,10 @@ const NavBar = () => {
     return (
         <>
             <motion.header
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-smooth ${
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-smooth border-b ${
                     isScrolled
-                        ? "py-3 bg-pdc-bg/70 backdrop-blur-xl border-b border-pdc-border shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
-                        : "py-5 bg-transparent"
+                        ? "py-3 bg-pdc-bg/80 backdrop-blur-xl border-pdc-border shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+                        : "py-5 bg-transparent border-transparent"
                 }`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}

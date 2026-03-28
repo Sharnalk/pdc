@@ -67,7 +67,6 @@ const TutorialSwiper = ({ titleButton }) => {
                 <div className="mt-8 flex justify-between items-center pt-6 border-t border-pdc-border">
                     <div className="flex gap-3">
                         <Button
-                            variant="outline"
                             onClick={goToPrev}
                             disabled={currentIndex === 0}
                             className="btn-pdc"
@@ -75,7 +74,6 @@ const TutorialSwiper = ({ titleButton }) => {
                             <ChevronLeft className="mr-2 h-4 w-4" /> Previous
                         </Button>
                         <Button
-                            variant="outline"
                             onClick={goToNext}
                             disabled={currentIndex === slides.length - 1}
                             className="btn-pdc"

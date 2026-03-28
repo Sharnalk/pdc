@@ -97,7 +97,7 @@ export const SlideHowToReadChart = () => {
                     <RepartitionGraph apiData={apiRepartitionData}/>
                 </div>
                 <div
-                    className={`flex flex-col w-fit p-2 rounded-md text-black bg-neutral-50 items-center space-y-3`}>
+                    className={`flex flex-col w-fit p-4 rounded-xl border border-pdc-border bg-pdc-bg/60 backdrop-blur-md items-center space-y-3`}>
                     <BarChartConsumptionType/>
                     <Button variant="default_blue" onClick={() => getFunctionToCall()()}>Submit</Button>
                 </div>
@@ -136,7 +136,7 @@ export const ExplanationConsumption = () => {
                     <BarChartGraph apiData={apiData.data} orientation={false}/>
                 </div>
                 <div
-                    className={`flex flex-col w-fit p-2 rounded-md text-black bg-neutral-50 items-center space-y-3`}>
+                    className={`flex flex-col w-fit p-4 rounded-xl border border-pdc-border bg-pdc-bg/60 backdrop-blur-md items-center space-y-3`}>
                     <ConsumptionGroupCheckbox precision={'Education level '}/>
                     <Button variant="default_blue" onClick={() => {GET_CONSUMPTION_DATA(new URLSearchParams({education:precisionConsumption, drug: 'meth'}), 'by_education').then(data => setApiData(data))}}>Submit</Button>
                 </div>
@@ -232,7 +232,7 @@ export const SlideCorrelationIntroduction = () => {
 
             <p className={'text-base md:text-xl underline underline-offset-2'}>{t.featureCorrelationDetermination}</p>
             <div className="flex gap-x-4">
-            <div className="rounded-md w-fit bg-slate-50 text-black">
+            <div className="rounded-xl w-fit bg-pdc-bg/60 border border-pdc-border backdrop-blur-md">
                 <RadioGroup onValueChange={setSelectedValue}>
                     <div className={`flex flex-col gap-2 p-6`}>
                         <div className="flex items-center space-x-2">

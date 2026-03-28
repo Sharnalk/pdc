@@ -100,7 +100,15 @@ const CorrelationChart = () => {
         },
         dataLabels: {
             enabled: false
-        }
+        },
+        tooltip:{
+            theme:'light',
+            style: {
+                fontSize: '12px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                colors: ['#263238']
+            },
+        },
     };
 
     return (
